@@ -57,3 +57,24 @@ now_utc()
 convert_time_zone(dt, new_time_zone)
 # Expresses and returns the datetime dt as a local time in another time zone.
 ```
+
+## date_helper.Arithmetic
+- These functions only work on `datetime` objects with date and time components.
+- `time_unit` can be 'year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'microsecond'
+- The start of the week is Monday 00:00 in the `datetime`'s time zone.
+
+```python
+date_floor(datetime, time_unit)
+# Returns the datetime rounded down to the nearest time_unit
+
+date_ceil(datetime, time_unit)
+# Returns the datetime rounded up to the nearest time_unit
+
+date_frac(datetime, time_unit)
+# The amount of time between date_floor(datetime, time_unit) and datetime.
+# The return value is a timedelta object.
+
+date_linspace(start, stop, num, endpoint=True)
+# Returns list of num equally-spaced times in the range [start, stop].
+# endpoint is whether the stop time should be included in the output.
+```
