@@ -36,8 +36,11 @@ def week_ceil(dat):
 
 def make_datetime(parts, tzinfo):
   "Returns a datetime from a list of its parts."
-  return datetime(parts[0], parts[1], parts[2],
-    parts[3], parts[4], parts[5], parts[6], tzinfo=tzinfo)
+  ymd = datetime(parts[0], parts[1], 1, tzinfo=tzinfo)
+  ymd += timedelta(days=parts[2] - 1,
+    hours=parts[3], minutes=parts[4], seconds=parts[5],
+    microseconds=parts[6])
+  return ymd
 
 def date_floor(dt, time_unit):
   "The datetime rounded down to time_unit."
