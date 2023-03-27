@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-from BusinessDays import start_of_week
+from .BusinessDays import start_of_week
 
 def start_of_month(year, month):
   "Returns the first day of the month."
